@@ -80,16 +80,6 @@ GIT
       thor (>= 0.20.3, < 2.0)
 
 GIT
-  remote: https://github.com/rails/web-console.git
-  revision: 95bcf59d5c14ead1c886fe83e2ac9ebc41e08e02
-  specs:
-    web-console (4.0.0)
-      actionview (>= 6.0.0.a)
-      activemodel (>= 6.0.0.a)
-      bindex (>= 0.4.0)
-      railties (>= 6.0.0.a)
-
-GIT
   remote: https://github.com/rails/webpacker.git
   revision: 5d5b3b867d35b376f3fa2af7c9cee3bfdf6f0f7c
   specs:
@@ -103,7 +93,8 @@ GEM
   specs:
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
-    bindex (0.8.1)
+    ast (2.4.0)
+    bcrypt (3.1.13)
     bootsnap (1.4.4)
       msgpack (~> 1.0)
     builder (3.2.3)
@@ -126,8 +117,7 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
-    jbuilder (2.9.1)
-      activesupport (>= 4.2.0)
+    jaro_winkler (1.5.3)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -148,6 +138,9 @@ GEM
     nio4r (2.4.0)
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
+    parallel (1.17.0)
+    parser (2.6.3.0)
+      ast (~> 2.4.0)
     pg (1.1.4)
     public_suffix (3.1.1)
     puma (3.12.1)
@@ -161,11 +154,25 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
+    rainbow (3.0.0)
     rake (12.3.2)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     regexp_parser (1.5.1)
+    rubocop (0.72.0)
+      jaro_winkler (~> 1.5.1)
+      parallel (~> 1.10)
+      parser (>= 2.6)
+      rainbow (>= 2.2.2, < 4.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 1.7)
+    rubocop-performance (1.4.0)
+      rubocop (>= 0.71.0)
+    rubocop-rails (2.2.1)
+      rack (>= 1.1)
+      rubocop (>= 0.72.0)
+    ruby-progressbar (1.10.1)
     ruby_dep (1.5.0)
     rubyzip (1.2.3)
     sass-rails (6.0.0.beta3)
@@ -197,6 +204,7 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
+    unicode-display_width (1.6.0)
     webdrivers (4.1.0)
       nokogiri (~> 1.6)
       rubyzip (~> 1.0)
@@ -212,19 +220,20 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 2.15)
-  jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rails!
+  rubocop
+  rubocop-performance
+  rubocop-rails
   sass-rails (>= 5)
   selenium-webdriver
   turbolinks (~> 5)
-  tzinfo-data
-  web-console!
   webdrivers
   webpacker!
 
